@@ -1,10 +1,10 @@
-Project: 0x13. C - More singly linked lists
-Basedon- C
+0x13. C - More singly linked lists
+C
 Algorithm
 Data structure
 
-Requirements:
-      General:
+Project Requirements
+General
 Allowed editors: vi, vim, emacs
 All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
 All your files should end with a new line
@@ -19,7 +19,3 @@ In the following examples, the main.c files are shown as examples. You can use t
 The prototypes of all your functions and the prototype of the function _putchar should be included in your header file called lists.h
 Don’t forget to push your header file
 All your header files should be include guarded
-Tasks:
-0. Print list 
-to
-14. Find the loop

@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - Prints a listint_t list safely.
- * @head: A pointer to the head of the listint_t list.
+ * free_listint_safe - frees a linked list
+ * @h: pointer to the first node in the linked list
  *
- * Return: The number of nodes in the list.
+ * Return: number of elements in the freed list
  */
 size_t free_listint_safe(listint_t **h)
 {
