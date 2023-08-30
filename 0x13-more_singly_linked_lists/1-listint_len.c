@@ -1,20 +1,20 @@
-#include "custom_lists.h"
+#include "lists.h"
 
 /**
- * count_custom_elements - counts elements in a custom linked list
- * @custom_list: linked list of type custom_node_t to traverse
+ * listint_len - returns the number of elements in a linked listint_t list
+ * @h: pointer to the head of the list
  *
- * Returns: number of nodes
+ * Return: the number of nodes
  */
-size_t count_custom_elements(const custom_node_t *custom_list)
+size_t listint_len(const listint_t *h)
 {
-    size_t count = 0;
+	size_t num = 0;
 
-    while (custom_list)
-    {
-        count++;
-        custom_list = custom_list->next;
-    }
+	while (h)
+	{
+		num++;
+		h = h->next;
+	}
 
-    return count;
+	return (num);
 }

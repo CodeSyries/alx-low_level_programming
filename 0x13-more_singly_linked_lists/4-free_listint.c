@@ -1,17 +1,16 @@
-#include "custom_lists.h"
-
+#include "lists.h"
 /**
- * custom_free_list - frees a custom linked list
- * @custom_head: custom_node_t list to be freed
+ * free_listint - frees a listint_t list
+ * @head: pointer to the head of the list
  */
-void custom_free_list(custom_node_t *custom_head)
+void free_listint(listint_t *head)
 {
-    custom_node_t *temp;
+	listint_t *temp;
 
-    while (custom_head)
-    {
-        temp = custom_head->next;
-        free(custom_head);
-        custom_head = temp;
-    }
+	while (head)
+	{
+		temp = head->next;
+		free(head);
+		head = temp;
+	}
 }

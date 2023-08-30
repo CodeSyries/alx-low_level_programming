@@ -1,23 +1,22 @@
-#include "custom_lists.h"
-
+#include "lists.h"
 /**
- * custom_pop_data - removes the first node from a custom linked list
- * @custom_head: pointer to the first element in the custom list
+ * pop_listint - deletes the head node of a listint_t linked list
+ * @head: pointer to the address of the head of the list
  *
- * Returns: the data inside the removed element, or 0 if the list is empty
+ * Return: the data inside the deleted element, or 0 if the list is empty
  */
-int custom_pop_data(custom_node_t **custom_head)
+int pop_listint(listint_t **head)
 {
-    custom_node_t *temp;
-    int data = 0;
+	listint_t *temp;
+	int num;
 
-    if (!custom_head || !*custom_head)
-        return 0;
+	if (!head || !*head)
+		return (0);
 
-    data = (*custom_head)->data;
-    temp = (*custom_head)->next;
-    free(*custom_head);
-    *custom_head = temp;
+	num = (*head)->n;
+	temp = (*head)->next;
+	free(*head);
+	*head = temp;
 
-    return data;
+	return (num);
 }

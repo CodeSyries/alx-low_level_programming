@@ -1,21 +1,20 @@
-#include "custom_lists.h"
-
+#include "lists.h"
 /**
- * calculate_custom_sum - computes the sum of data in a custom_node_t list
- * @custom_head: pointer to the first node in the custom list
+ * sum_listint - calculates the sum of all the data (n) in a listint_t list
+ * @head: pointer to the head of the list
  *
- * Returns: the calculated sum
+ * Return: resulting sum
  */
-int calculate_custom_sum(custom_node_t *custom_head)
+int sum_listint(listint_t *head)
 {
-    int custom_sum = 0;
-    custom_node_t *temp = custom_head;
+	int sum = 0;
+	listint_t *temp = head;
 
-    while (temp)
-    {
-        custom_sum += temp->data;
-        temp = temp->next;
-    }
+	while (temp)
+	{
+		sum += temp->n;
+		temp = temp->next;
+	}
 
-    return custom_sum;
+	return (sum);
 }

@@ -1,34 +1,34 @@
-#include "custom_lists.h"
+#include "lists.h"
 
 /**
- * custom_find_list_loop - finds the loop in a custom linked list
- * @custom_head: custom linked list to search for
+ * find_listint_loop - Finds the loop in a linked list.
+ * @head: Linked list to search for a loop.
  *
- * Returns: address of the node where the loop starts, or NULL
+ * Return: Address of the node where the loop starts, or NULL if no loop.
  */
-custom_node_t *custom_find_list_loop(custom_node_t *custom_head)
+listint_t *find_listint_loop(listint_t *head)
 {
-    custom_node_t *slow = custom_head;
-    custom_node_t *fast = custom_head;
+	listint_t *slow = head;
+	listint_t *fast = head;
 
-    if (!custom_head)
-        return NULL;
+	if (!head)
+		return (NULL);
 
-    while (slow && fast && fast->next)
-    {
-        fast = fast->next->next;
-        slow = slow->next;
-        if (fast == slow)
-        {
-            slow = custom_head;
-            while (slow != fast)
-            {
-                slow = slow->next;
-                fast = fast->next;
-            }
-            return fast;
-        }
-    }
+	while (slow && fast && fast->next)
+	{
+		fast = fast->next->next;
+		slow = slow->next;
+		if (fast == slow)
+		{
+			slow = head;
+			while (slow != fast)
+			{
+				slow = slow->next;
+				fast = fast->next;
+			}
+			return (fast);
+		}
+	}
 
-    return NULL;
+	return (NULL);
 }

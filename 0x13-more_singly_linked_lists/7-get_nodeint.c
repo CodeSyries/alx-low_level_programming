@@ -1,22 +1,21 @@
-#include "custom_lists.h"
-
+#include "lists.h"
 /**
- * get_custom_node_at_index - retrieves a node at a specific index in a custom linked list
- * @custom_head: pointer to the first node in the custom list
- * @index: index of the node to retrieve
+ * get_nodeint_at_index - returns the node at a certain index in a listint_t list
+ * @head: pointer to the head of the list
+ * @index: index of the node to return
  *
- * Returns: pointer to the requested node, or NULL if not found
+ * Return: pointer to the node at the specified index, or NULL
  */
-custom_node_t *get_custom_node_at_index(custom_node_t *custom_head, unsigned int index)
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-    unsigned int i = 0;
-    custom_node_t *temp = custom_head;
+	unsigned int i = 0;
+	listint_t *temp = head;
 
-    while (temp && i < index)
-    {
-        temp = temp->next;
-        i++;
-    }
+	while (temp && i < index)
+	{
+		temp = temp->next;
+		i++;
+	}
 
-    return temp ? temp : NULL;
+	return (temp ? temp : NULL);
 }

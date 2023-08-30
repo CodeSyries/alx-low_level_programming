@@ -1,45 +1,43 @@
-#include "custom_lists.h"
-
+#include "lists.h"
 /**
- * custom_insert_node_at_index - inserts a new node in a custom linked list
- * at a specified position
- * @custom_head: pointer to the first node in the custom list
- * @index: index where the new node is added
- * @data: data to insert in the new node
+ * insert_nodeint_at_index - inserts a new node at a given position
+ * @head: pointer to the address of the head of the list
+ * @idx: index where the new node is to be added
+ * @n: data to insert in the new node
  *
- * Returns: pointer to the new node, or NULL
+ * Return: address of the new node, or NULL if it fails
  */
-custom_node_t *custom_insert_node_at_index(custom_node_t **custom_head, unsigned int index, int data)
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-    unsigned int i;
-    custom_node_t *new_node;
-    custom_node_t *temp = *custom_head;
+	unsigned int i;
+	listint_t *new;
+	listint_t *temp = *head;
 
-    new_node = malloc(sizeof(custom_node_t));
-    if (!new_node || !custom_head)
-        return NULL;
+	new = malloc(sizeof(listint_t));
+	if (!new || !head)
+		return (NULL);
 
-    new_node->data = data;
-    new_node->next = NULL;
+	new->n = n;
+	new->next = NULL;
 
-    if (index == 0)
-    {
-        new_node->next = *custom_head;
-        *custom_head = new_node;
-        return new_node;
-    }
+	if (idx == 0)
+	{
+		new->next = *head;
+		*head = new;
+		return (new);
+	}
 
-    for (i = 0; temp && i < index; i++)
-    {
-        if (i == index - 1)
-        {
-            new_node->next = temp->next;
-            temp->next = new_node;
-            return new_node;
-        }
-        else
-            temp = temp->next;
-    }
+	for (i = 0; temp && i < idx; i++)
+	{
+		if (i == idx - 1)
+		{
+			new->next = temp->next;
+			temp->next = new;
+			return (new);
+		}
+		else
+			temp = temp->next;
+	}
 
-    return NULL;
+	return (NULL);
 }

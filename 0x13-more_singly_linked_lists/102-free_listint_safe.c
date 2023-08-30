@@ -1,40 +1,40 @@
-#include "custom_lists.h"
+#include "lists.h"
 
 /**
- * custom_free_list_safe - frees a custom linked list
- * @custom_head: pointer to the first node in the custom list
+ * print_listint_safe - Prints a listint_t list safely.
+ * @head: A pointer to the head of the listint_t list.
  *
- * Returns: number of elements in the freed list
+ * Return: The number of nodes in the list.
  */
-size_t custom_free_list_safe(custom_node_t **custom_head)
+size_t free_listint_safe(listint_t **h)
 {
-    size_t len = 0;
-    int diff;
-    custom_node_t *temp;
+	size_t len = 0;
+	int diff;
+	listint_t *temp;
 
-    if (!custom_head || !*custom_head)
-        return 0;
+	if (!h || !*h)
+		return (0);
 
-    while (*custom_head)
-    {
-        diff = (int)(*custom_head) - (int)(*custom_head)->next;
-        if (diff > 0)
-        {
-            temp = (*custom_head)->next;
-            free(*custom_head);
-            *custom_head = temp;
-            len++;
-        }
-        else
-        {
-            free(*custom_head);
-            *custom_head = NULL;
-            len++;
-            break;
-        }
-    }
+	while (*h)
+	{
+		diff = *h - (*h)->next;
+		if (diff > 0)
+		{
+			temp = (*h)->next;
+			free(*h);
+			*h = temp;
+			len++;
+		}
+		else
+		{
+			free(*h);
+			*h = NULL;
+			len++;
+			break;
+		}
+	}
 
-    *custom_head = NULL;
+	*h = NULL;
 
-    return len;
+	return (len);
 }

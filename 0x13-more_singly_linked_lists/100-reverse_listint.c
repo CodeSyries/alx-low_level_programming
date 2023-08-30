@@ -1,25 +1,25 @@
-#include "custom_lists.h"
+#include "lists.h"
 
 /**
- * custom_reverse_list - reverses a custom linked list
- * @custom_head: pointer to the first node in the custom list
+ * reverse_listint - reverses a listint_t linked list
+ * @head: pointer to the address of the head of the list
  *
- * Returns: pointer to the first node in the reversed list
+ * Return: pointer to the first node of the reversed list
  */
-custom_node_t *custom_reverse_list(custom_node_t **custom_head)
+listint_t *reverse_listint(listint_t **head)
 {
-    custom_node_t *prev = NULL;
-    custom_node_t *next = NULL;
+	listint_t *prev = NULL;
+	listint_t *next = NULL;
 
-    while (*custom_head)
-    {
-        next = (*custom_head)->next;
-        (*custom_head)->next = prev;
-        prev = *custom_head;
-        *custom_head = next;
-    }
+	while (*head)
+	{
+		next = (*head)->next;
+		(*head)->next = prev;
+		prev = *head;
+		*head = next;
+	}
 
-    *custom_head = prev;
+	*head = prev;
 
-    return *custom_head;
+	return (*head);
 }
